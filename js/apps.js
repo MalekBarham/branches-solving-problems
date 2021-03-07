@@ -54,8 +54,8 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     var summing2= sum(summing[0],c)
     var multiplying =multiply(a,b);
     var multiplying2=multiply(multiplying[0],c)
-    return [summing2[0], multiplying2[0] ,a + " and " + b + " and " + c + " sum to " + summing2[0] +".", "The product of " + a + " and " + b + " and " + c + " is " + multiplying2[0] + "."]; 
-}
+return [summing2[0], multiplying2[0] ,a + " and " + b + " and " + c + " sum to " + summing2[0] +".", "The product of " + a + " and " + b + " and " + c + " is " + multiplying2[0] + "."]; 
+ }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
@@ -75,13 +75,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line
+    
+    var firstSum = sum(testArray[0],testArray[1]);
+    var secondSum = sum(firstSum[0],testArray[2]);
+    return [secondSum[0], "2,3,4 was passed in as an array of numbers, and 9 is their sum."]
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -97,11 +101,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var firstMultiply = multiply(multArr[0],multArr[1]);
+    var secondMultiply = multiply(firstMultiply[0],multArr[2]);
+       return [secondMultiply[0], "The numbers 2,3,4 have a product of 24."]
+      
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -125,10 +132,14 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    var testMultiply = multiply(testDynamicArray[0],testDynamicArray[1]);
+    var secondTestMultiply = multiply(testMultiply[0],testDynamicArray[2]);
+    var theredTestMultiply = multiply(secondTestMultiply[0],testDynamicArray[3]);
+    var forthTestMultiply = multiply(theredTestMultiply[0],testDynamicArray[4]);
+    return [forthTestMultiply[0], "The numbers 1,2,3,4,5 have a product of 120."]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
